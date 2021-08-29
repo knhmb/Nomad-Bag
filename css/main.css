@@ -106,9 +106,9 @@ body {
     margin-left: 0;
   }
 
-  /* .list-items ul {
-    min-width: 390px;
-  } */
+  .links {
+    display: none;
+  }
 }
 
 /* // X-Large devices (large desktops, 1200px and up) */
@@ -119,6 +119,7 @@ body {
 @media (min-width: 1400px) {
 }
 
+/* Header Start */
 .header-content {
   display: flex;
   justify-content: space-between;
@@ -178,6 +179,75 @@ body {
 .header-content .menu .icon-list span {
   color: var(--main-color);
 }
+
+.links {
+  position: relative;
+}
+
+.links:hover ul {
+  display: block;
+}
+
+.links .icon {
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding-top: 10px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.links .icon:hover span:nth-child(2) {
+  width: 100%;
+}
+
+.links .icon span {
+  background-color: rgba(0, 0, 0, 0.645);
+  margin-bottom: 5px;
+  height: 2.5px;
+  width: 100%;
+}
+
+.links .icon span:nth-child(2) {
+  width: 60%;
+  transition: width 0.2s;
+}
+
+.links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 20px);
+  min-width: 200px;
+  background-color: #f6f6f6e0;
+  cursor: pointer;
+  display: none;
+  z-index: 1;
+}
+
+.links ul::before {
+  content: "";
+  position: absolute;
+  border: 10px solid;
+  border-color: transparent transparent var(--main-color) transparent;
+  right: 0;
+  top: -20px;
+  right: 5px;
+}
+
+.links ul li {
+  padding: 10px 20px;
+  transition: padding-left 0.2s;
+  font-weight: bold;
+}
+
+.links ul li:hover {
+  padding-left: 25px;
+}
+/* Header End */
 
 .upper-section {
   background-color: var(--main-color);
